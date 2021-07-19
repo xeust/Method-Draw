@@ -1,4 +1,5 @@
 (function () {
+
     var xfetch = function (resource, init) {
       init = init || {};
       if (["post", "put", "delete"].indexOf(init.method) !== -1) {
@@ -60,3 +61,4 @@
       },
     };
   })();
+
