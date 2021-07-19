@@ -37,9 +37,7 @@ const detaMenuMods = () => {
 
   // add share option
   const menu = document.querySelector("#menu_bar");
-
   const shareMenu = document.getElementById("deta_menus");
-
   const shareDiv = document.createElement("div");
   shareDiv.setAttribute("class", "share_menu");
   shareDiv.setAttribute("id", "share_drawing");
@@ -51,18 +49,14 @@ const detaMenuMods = () => {
   });
   shareDivTitle.innerText = `Share`;
   shareDiv.appendChild(shareDivTitle);
-
   shareMenu.appendChild(shareDiv);
 //   menu.appendChild(shareDiv);
-
   document.getElementById("sponsors").style.display = "none"
 }
 
 if (isDetaRuntime && !isPublic) {
   detaMenuMods();
-
 }
 if (isPublic) {
     document.getElementById("sponsors").style.display = "inherit"
-
 }

@@ -110,9 +110,7 @@
 
         // add new menu item to show the file name
         const menu = document.querySelector('#menu_bar');
-
         const detaMenus = document.getElementById("deta_menus");
-
         const openItem = document.createElement("div");
         openItem.setAttribute("class", "menu");
         openItem.setAttribute("id", "curr_open_drawing");
@@ -120,9 +118,7 @@
         openItemTitle.setAttribute("class", "curr_open_drawing");
         openItemTitle.innerText = filename;
         openItem.appendChild(openItemTitle);
-
         detaMenus.appendChild(openItem);
-
 
         // add delete option to the the file menu
         const saveAs = document.getElementById('tool_csaveas');
@@ -246,10 +242,8 @@
                 // change share modal values
                 setShareStatus();
                 editor.modal.cloudOpen.close();
-
                 $('#canvas_title').val(filename);
                 svgCanvas.setDocumentTitle(filename);
-
             };
             reader.onerror = function () {
                 console.log(reader.error);

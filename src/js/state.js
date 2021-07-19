@@ -1,4 +1,4 @@
-function State() {
+function State(){
 
   const _self = this;
   const tenThousandThings = dao.map(thing => thing.name);
@@ -6,15 +6,14 @@ function State() {
   const ID = window.location.pathname;
 
   this.data = _loadData();
-
+  
   this.set = (key, val) => {
-
-
+    
     if (isDetaRuntime && !isPublic && key === "canvasContent") {
       window.deta.setStatus("LOCAL_CHANGES");
     }
     key = key.split("-")[0] || key;
-    if (tenThousandThings.indexOf(key) === -1) return console.warn(key + " not implemented");
+    if (tenThousandThings.indexOf(key) === -1) return console.warn( key + " not implemented");
     const archetype = dao.find(thing => thing.name === key);
     val = _self.data[_getKey(key)] = archetype.clean(val);
     if (~saveableKeys.indexOf(key)) _save(_getKey(key), val);
@@ -25,10 +24,9 @@ function State() {
     return _self.data[_getKey(key)];
   }
 
-  this.refresh = () => { dao.forEach(thing => this[thing.name](this.get(thing.name))); }
-
+  this.refresh = ()     => { dao.forEach(thing => this[thing.name]( this.get(thing.name) ) ); }
+  
   // canvas data
-
   this.canvasId = (id)      => {/* noop */}
   this.canvasMode = (mode)  => { editor.toolbar.setMode(mode) }
   this.canvasTitle = (str)  => { editor.canvas.rename(str) }
@@ -63,7 +61,7 @@ function State() {
     //const key = name.indexOf("canvas") !== -1
     //      ? name + "-" + ID
     //      : name + "-0"; // system
-    return name;
+     return name;
   }
 
   function _loadData() {
