@@ -19,6 +19,9 @@ function populateFonts(fonts){
       const ext = variant.file.split(".")[1].toLowerCase();
       const format = formats[ext];
       const src = `url('font-files/${variant.file}') format('${format}')`;
+      if (isDetaRuntime) {
+        src = `url('https://method-draw-fonts.s3.eu-central-1.amazonaws.com/font-files/${variant.file}') format('${format}')`;
+      }
       fontfaces += `
         @font-face {
           font-family: '${fontName}';
