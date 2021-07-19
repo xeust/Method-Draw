@@ -242,6 +242,8 @@
                 // change share modal values
                 setShareStatus();
                 editor.modal.cloudOpen.close();
+                $('#canvas_title').val(filename);
+                svgCanvas.setDocumentTitle(filename);
             };
             reader.onerror = function () {
                 console.log(reader.error);
