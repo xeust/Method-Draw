@@ -8,7 +8,7 @@ const detaModals = {
            <div class='ext_tag'> .svg</div>
         </div>
         <h4 id="save_warning" class="save_warning"></h4>
-        <div class="modal_btn_row">
+        <div class="modal_btn_row inverted-undo">
            <button id="save_cancel_btn" class="cancel">Cancel</button>
            <button id="save_ok_btn" class="ok">Ok</button>
            <button id="save_confirm_btn" class="save_confirm_btn">Confirm</button>
