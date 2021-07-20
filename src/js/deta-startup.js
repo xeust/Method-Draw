@@ -18,7 +18,7 @@ const detaMenuMods = () => {
   document.getElementById("file_menu_main").innerHTML =
     `
       <div class="menu_title">File</div>
-      <div class="menu_list" id="file_menu">
+      <div class="menu_list inverted-undo" id="file_menu">
         <div data-action="clear" id="tool_clear" class="menu_item">New Document</div>
         <div data-action="cloudOpen" id="tool_copen" class="menu_item">Open Document</div>
         <div data-action="cloudSave" id="tool_csave" class="menu_item">Save<span class="shortcut">⌘S</span></div>

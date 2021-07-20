@@ -104,7 +104,7 @@ const detaModals = {
     cloudOpen: new MD.Modal({
         html: `
         <div class="modal_header">Please select an svg to open:</div>
-        <div id="drawing_list" class="open_drawing_list">
+        <div id="drawing_list" class="open_drawing_list inverted-undo">
           Loading drawings...
         </div>
         <h4 id="open_warning" class="open_warning">There was an error opening the drawing. Please try again.</h4>
