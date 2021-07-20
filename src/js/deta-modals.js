@@ -234,7 +234,7 @@ const detaModals = {
 
     share: new MD.Modal({
         html: `
-        <div class="share_wrap">
+        <div class="share_wrap inverted-undo">
             <div class="share_controls">
                 <div class="share_info">
                     <div class="share_title">Share to the web.</div>
