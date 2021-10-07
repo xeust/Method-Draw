@@ -377,8 +377,20 @@ MD.Editor = function(){
   this.cloudDelete = cloudDelete;
 
   async function cloudClear() {
-    clear();
-    await window.deta.close();
+    var dims = state.get("canvasSize");
+    $.confirm("<h4>Do you want to clear the drawing?</h4><p>This will also erase your undo history</p>", async function(ok) {
+      if(!ok) return;
+      state.set("canvasMode", "select")
+      svgCanvas.clear();
+      svgCanvas.setResolution(dims[0], dims[1]);
+      editor.canvas.update(true);
+      editor.zoom.reset();
+      editor.panel.updateContextPanel();
+      editor.paintBox.fill.prep();
+      editor.paintBox.stroke.prep();
+      svgCanvas.runExtensions('onNewDocument');
+      await window.deta.close();
+    });
   }
   this.cloudClear = cloudClear;
 

@@ -98,6 +98,9 @@
 
         // set currOpen var to null
         window.deta.currOpen = null;
+
+        //rename canvas
+        editor.canvas.rename("Drawing");
     };
 
     // for setting a drawing as open in the client
