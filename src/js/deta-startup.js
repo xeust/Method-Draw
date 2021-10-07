@@ -19,7 +19,7 @@ const detaMenuMods = () => {
     `
       <div class="menu_title">File</div>
       <div class="menu_list inverted-undo" id="file_menu">
-        <div data-action="clear" id="tool_clear" class="menu_item">New Document</div>
+        <div data-action="cloudClear" id="tool_clclear" class="menu_item">New Document</div>
         <div data-action="cloudOpen" id="tool_copen" class="menu_item">Open Document</div>
         <div data-action="cloudSave" id="tool_csave" class="menu_item">Save<span class="shortcut">⌘S</span></div>
         <div data-action="cloudSaveAs" id="tool_csaveas" class="menu_item">Save As

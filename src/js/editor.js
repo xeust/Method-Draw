@@ -349,8 +349,8 @@ MD.Editor = function(){
     editor.modal.source.open();
   }
 
-   // deta stuff
-   function cloudSaveAs() {
+  // deta stuff
+  function cloudSaveAs() {
     editor.modal.cloudSaveAs.open();
   }
   this.cloudSaveAs = cloudSaveAs;
@@ -375,6 +375,12 @@ MD.Editor = function(){
     editor.modal.cloudDelete.open();
   }
   this.cloudDelete = cloudDelete;
+
+  async function cloudClear() {
+    clear();
+    await window.deta.close();
+  }
+  this.cloudClear = cloudClear;
 
   function share() {
 
