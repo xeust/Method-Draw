@@ -31,6 +31,8 @@ async def add_no_cache(request: Request, call_next):
     response = await call_next(request)
     if request.url.path == "/":
         response.headers["Cache-control"] = "no-store"
+    if request.url.path.endswith(".js"):
+        response.headers["Cache-control"] = "no-cache"
     return response
 
 @app.get("/api/drawings")

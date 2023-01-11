@@ -56,6 +56,22 @@
         window.deta.status = statusMap[status].text;
     }
 
+    // for clearing the canvas
+
+    const clearCanvas = () => {
+        // clear canvas
+        const dims = state.get("canvasSize");
+        state.set("canvasMode", "select");
+        svgCanvas.clear();
+        svgCanvas.setResolution(dims[0], dims[1]);
+        editor.canvas.update(true);
+        editor.zoom.reset();
+        editor.panel.updateContextPanel();
+        editor.paintBox.fill.prep();
+        editor.paintBox.stroke.prep();
+        svgCanvas.runExtensions('onNewDocument');
+    }
+
     // for closing an 'open' drawing
     const close = () => {
         removeStatus();
@@ -78,25 +94,13 @@
         document.getElementById("share_desc").innerHTML = 'Make your drawing public and share a link with anyone.';
         document.getElementById("switch-1").checked = false;
 
+
         // set currOpen var to null
         window.deta.currOpen = null;
+
+        //rename canvas
+        editor.canvas.rename("Drawing");
     };
-
-    // for clearing the canvas
-
-    const clearCanvas = () => {
-        // clear canvas
-        const dims = state.get("canvasSize");
-        state.set("canvasMode", "select");
-        svgCanvas.clear();
-        svgCanvas.setResolution(dims[0], dims[1]);
-        editor.canvas.update(true);
-        editor.zoom.reset();
-        editor.panel.updateContextPanel();
-        editor.paintBox.fill.prep();
-        editor.paintBox.stroke.prep();
-        svgCanvas.runExtensions('onNewDocument');
-    }
 
     // for setting a drawing as open in the client
 
